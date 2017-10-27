@@ -1,0 +1,42 @@
+//Rextester.Program.Main is the entry point for your code. Don't change it.
+//Compiler version 4.0.30319.17929 for Microsoft (R) .NET Framework 4.5
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //! Written by Wan Azuhri: Fibonacci sequence even-valued terms sum assessment for SODING, 27/10/2017 started at 1:17PM completed at 1:53PM.
+            int maxNumber = 4000000;
+            int lastNumber = 1;
+            int nextNumber = 2;
+            int combinedNumber = 0;
+            int addedNumbers = 0;
+            List<int> evenNumberArray = new List<int>();
+                
+            Console.WriteLine("Fibonacci sequence starts!\n");
+            while(nextNumber < maxNumber){
+                combinedNumber = lastNumber+nextNumber;
+                Console.WriteLine("last:"+lastNumber+"|nextNumber:"+nextNumber+"|combined:"+combinedNumber);
+                if(combinedNumber % 2 == 0){
+                    evenNumberArray.Add(combinedNumber);
+                }
+                lastNumber = nextNumber;
+                nextNumber = combinedNumber;
+                combinedNumber = 0;
+            }
+            Console.WriteLine("\n");
+            for(int i=0;i<evenNumberArray.Count;i++){
+                Console.WriteLine("Array["+i+"]:"+evenNumberArray[i]);
+                addedNumbers+=evenNumberArray[i];
+            }
+            Console.WriteLine("\nSum of the even-valued terms: "+addedNumbers);
+        }
+    }
+}
