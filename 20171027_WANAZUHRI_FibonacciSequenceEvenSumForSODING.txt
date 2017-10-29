@@ -23,7 +23,7 @@ namespace Rextester
             Console.WriteLine("Fibonacci sequence starts!\n");
             while(nextNumber < maxNumber){
                 combinedNumber = lastNumber+nextNumber;
-                Console.WriteLine("last:"+lastNumber+"|nextNumber:"+nextNumber+"|combined:"+combinedNumber);
+                Console.WriteLine("last:"+lastNumber+"|next:"+nextNumber+"|combined:"+combinedNumber);
                 if(combinedNumber % 2 == 0){
                     evenNumberArray.Add(combinedNumber);
                 }
